@@ -85,3 +85,6 @@ test_script:
   # Sleep a little to prevent interleaving test output with build output.
   - cd %BUILD_DIR%\src
   - ctest -V -C %BUILD_TYPE%
+
+init:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
